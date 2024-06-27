@@ -15,7 +15,7 @@ return new class extends Migration
           $table->id('serve_id');
           $table->unsignedInteger('serve_name'); 
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
         });
     }
 

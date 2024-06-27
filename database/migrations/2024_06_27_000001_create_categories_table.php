@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('category_id');
             $table->string('category_name', 255);
             $table->datetime('indate');
-            $table->datetime('update');
+            $table->datetime('updated_at');
         });
     }
 

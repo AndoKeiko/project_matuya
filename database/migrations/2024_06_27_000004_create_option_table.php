@@ -16,7 +16,7 @@ return new class extends Migration
           $table->string('option_name', 255);
           $table->unsignedInteger('price');
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
         });
     }
 

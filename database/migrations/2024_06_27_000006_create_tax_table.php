@@ -16,7 +16,7 @@ return new class extends Migration
           $table->string('tax_rate_name', 255);
           $table->unsignedInteger('tax_rate');
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
         });
     }
 

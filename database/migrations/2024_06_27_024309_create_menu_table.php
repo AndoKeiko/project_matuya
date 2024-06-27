@@ -21,7 +21,7 @@ return new class extends Migration
           $table->string('menu_image', 255)->nullable();
           $table->unsignedInteger('price');
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
           $table->foreign('category_id')->references('category_id')->on('categories_table');
           $table->foreign('allergies_id')->references('allergies_id')->on('allergies_table');
           $table->foreign('option_id')->references('option_id')->on('option_table');
