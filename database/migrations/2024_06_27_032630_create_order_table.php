@@ -18,7 +18,7 @@ return new class extends Migration
           $table->unsignedInteger('total_price');
           $table->unsignedBigInteger('payment_id');
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
           $table->foreign('tax_id')->references('tax_id')->on('tax_table');
           $table->foreign('payment_id')->references('payment_id')->on('payment_table');
         });

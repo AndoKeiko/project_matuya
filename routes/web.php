@@ -25,3 +25,8 @@ Route::get('/category', function () {
   return view('category');
 });
 
+Route::get('/menu', function () {
+  return view('menu');
+});
+
+

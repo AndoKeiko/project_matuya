@@ -15,7 +15,7 @@ return new class extends Migration
           $table->id('payment_id');
           $table->string('payment_name', 255);
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
         });
     }
 

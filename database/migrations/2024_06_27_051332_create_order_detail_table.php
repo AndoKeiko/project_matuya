@@ -17,7 +17,7 @@ return new class extends Migration
           $table->unsignedBigInteger('menu_id');
           $table->unsignedBigInteger('option_id');
           $table->datetime('indate');
-          $table->datetime('update');
+          $table->datetime('updated_at');
           $table->foreign('order_id')->references('order_id')->on('order_table');
           $table->foreign('menu_id')->references('menu_id')->on('menu_table');
           $table->foreign('option_id')->references('option_id')->on('option_table');
