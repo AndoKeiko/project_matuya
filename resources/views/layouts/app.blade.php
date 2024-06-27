@@ -35,7 +35,7 @@
     </header>
 
     <!-- Page Content -->
-    <main>
+    <main class="main">
       <!-- {{ $slot }} -->
       @yield('content')
     </main>

@@ -19,7 +19,7 @@ return new class extends Migration
           $table->unsignedBigInteger('allergies_id');
           $table->unsignedBigInteger('option_id');
           $table->string('menu_image', 255)->nullable();
-          $table->DECIMAL('price');
+          $table->DECIMAL('menu_price');
           $table->datetime('indate');
           $table->datetime('updated_at');
           $table->foreign('category_id')->references('category_id')->on('categories_table');

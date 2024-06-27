@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('option_table', function (Blueprint $table) {
           $table->id('option_id');
           $table->string('option_name', 255);
-          $table->DECIMAL('price');
+          $table->DECIMAL('option_price');
           $table->datetime('indate');
           $table->datetime('updated_at');
         });
