@@ -16,11 +16,11 @@
 
 </head>
 
-<body class="font-sans antialiased">
-  <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+<body class="font-sans antialiased body">
+  <div class="min-h-screen dark:bg-gray-900">
     <!-- Page Heading -->
     @include('layouts.header')
-    <header name="header">
+    <header name="header" class="bg-gray-100">
       <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
         <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex justify-between w-full">
           <a href="" class="flex text-center">おすすめ</a>
@@ -35,12 +35,12 @@
       </div>
     </header>
     <!-- Page Content -->
-    <main>
+    <main class="main">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         @yield('content')
       </div>
     </main>
-    <footer class="bg-gray-200 flex justify-between w-full">
+    <footer class="bg-gray-200 flex justify-between w-full footer">
       <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
         <div class="left_wrap w-8/12">
           <div class="left-up h-52">

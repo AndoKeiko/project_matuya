@@ -1,7 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 .body {
-  background: #ccc;
+  background: #fff;
   width: 50%;
   aspect-ratio: 5 / 3;
+  position: relative;
+  margin: 0 auto;
+}
+.main {
+  height: calc(100vh - 432px);
+  padding: 5rem 0;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
 }
 .left-up {
   overflow-y: auto;
@@ -65,4 +78,16 @@
   font-size: 1.6rem;
   padding: .5rem 1.5rem .5rem .5rem;
   margin-left: .5rem;
+}
+.menu_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.menu_list_item {
+  width: calc(100% / 6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0 .5rem;
 }
