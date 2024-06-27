@@ -1,0 +1,68 @@
+.body {
+  background: #ccc;
+  width: 50%;
+  aspect-ratio: 5 / 3;
+}
+.left-up {
+  overflow-y: auto;
+}
+.btn-zan {
+  padding: 2rem;
+}
+.btn-zan:hover {
+  box-shadow: 0 5px 10px #ccc;
+  transform: translate(0, -2px);
+}
+.btn-all-can {
+  padding: 2rem;
+}
+.btn-all-can:hover {
+  box-shadow: 0 5px 10px #ccc;
+  transform: translate(0, -2px);
+}
+.btn-amount {
+  letter-spacing: .5rem;
+  padding: 4rem;
+}
+.btn-amount:hover {
+  box-shadow: 0 5px 10px #ccc;
+  transform: translate(0, -2px);
+}
+.left-bottom-list {
+  display: flex;
+  justify-content: space-between;
+}
+.left-bottom-bar span {
+  padding: .2rem .5rem;
+  border: 1px solid #fff;
+  margin-right: .5rem;
+
+}
+.left-bottom-bar {
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  padding: .5rem 0 .6rem;
+}
+.left-bottom-list-item {
+  width: 50%;
+  padding: 0 3%;
+}
+.left-bottom-list-item:first-child {
+  border-right: 1px solid #222;
+}
+.amount_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.amount_price {
+  font-size: 2.5rem;
+  text-align: right;
+}
+.left-up {
+  margin-right: .5rem;
+}
+.item_list dd {
+  font-size: 1.6rem;
+  padding: .5rem 1.5rem .5rem .5rem;
+  margin-left: .5rem;
+}
