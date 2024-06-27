@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('serve_method_table', function (Blueprint $table) {
           $table->id('serve_id');
-          $table->unsignedInteger('serve_name'); 
+          $table->string('serve_name', 255);
           $table->datetime('indate');
           $table->datetime('updated_at');
         });
