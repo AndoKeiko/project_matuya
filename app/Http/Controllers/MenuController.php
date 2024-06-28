@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use App\Models\menu;
+use App\Models\Post;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-  public function index(): View
+  public function index($category_id): View
   {
+
     $menu_allergy = Menu::with('allergies')->orderBy('indate', 'asc')->get();
-    $menus_option = Menu::with('options')->orderBy('indate', 'asc')->get();
+    $menus_option = Menu::where('category_id', $category_id)->with('options')->orderBy('indate', 'asc')->get();
     $menus_server = Menu::with('serveMethods')->orderBy('indate', 'asc')->get();
     return view('menu', [
       'menu_allergy' => $menu_allergy,
@@ -34,7 +36,10 @@ class MenuController extends Controller
    */
   public function store(Request $request)
   {
+    $category_id = new Menu();
 
+    $category_id->category_id = $request->category_id;
+    return $category_id;
   }
 
   /**
@@ -42,7 +47,7 @@ class MenuController extends Controller
    */
   public function show(menu $menu)
   {
-    //
+
   }
 
   /**
