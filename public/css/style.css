@@ -89,6 +89,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  z-index: 2;
+}
+.items-center:hover {
+  cursor: pointer;
+}
+.menu_list_item:hover {
+  cursor: pointer;
 }
 .menu_img {
   margin-right: 1rem;

@@ -13,7 +13,7 @@
   <link href="{{asset('/css/style.css')}}" rel="stylesheet">
   @vite('resources/css/app.css')
   <!-- Scripts -->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 
 <body class="font-sans antialiased body">
@@ -23,7 +23,7 @@
     <header name="header" class="bg-gray-100">
       <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
         <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex justify-between w-full">
-        <a href="{{ route('menu.index', ['category_id' => 2]) }}" class="flex text-center">おすすめ</a>
+          <a href="{{ route('menu.index', ['category_id' => 2]) }}" class="flex text-center">おすすめ</a>
           <a href="{{ route('menu.index', ['category_id' => 1]) }}" class="flex text-center">牛めし</a>
           <a href="{{ route('menu.index', ['category_id' => 3]) }}" class="flex text-center">カレー</a>
           <a href="{{ route('menu.index', ['category_id' => 4]) }}" class="flex text-center">丼</a>
@@ -43,23 +43,8 @@
     <footer class="bg-gray-200 flex justify-between w-full footer">
       <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
         <div class="left_wrap w-8/12">
-          <div class="left-up h-52">
-            <dl class="item_list flex justify-between font-bold">
-              <dt class="w-8 flex items-center"><span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span></dt>
-              <dd class="w-full flex justify-between"><span class="title">牛めし　小盛</span><span>￥1,080</span></dd>
-            </dl>
-            <dl class="item_list flex justify-between font-bold">
-              <dt class="w-8 flex items-center"><span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span></dt>
-              <dd class="w-full flex justify-between"><span class="title">牛めし　小盛</span><span>￥1,080</span></dd>
-            </dl>
-            <dl class="item_list flex justify-between font-bold">
-              <dt class="w-8 flex items-center"><span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span></dt>
-              <dd class="w-full flex justify-between"><span class="title">牛めし　小盛</span><span>￥1,080</span></dd>
-            </dl>
-            <dl class="item_list flex justify-between font-bold">
-              <dt class="w-8 flex items-center"><span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span></dt>
-              <dd class="w-full flex justify-between"><span class="title">牛めし　小盛</span><span>￥1,080</span></dd>
-            </dl>
+          <div class="left-up h-52" id="left-up">
+
           </div>
           <div class="left-bottom">
             <div class="left-bottom-bar bg-slate-900 p-2 text-white"><span>10000</span><span>5000</span><span>5000</span><span>1000</span><span>クレジットカード</span><span>電子マネー</span></div>
@@ -70,7 +55,7 @@
               </li>
               <li class="left-bottom-list-item">
                 <p class="amount_title">商品合計</p>
-                <p class="amount_price">￥1,100</p>
+                <p class="amount_price" id="total_price">￥0</p>
               </li>
             </ul>
           </div>
@@ -83,6 +68,7 @@
       </div>
     </footer>
   </div>
+  <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

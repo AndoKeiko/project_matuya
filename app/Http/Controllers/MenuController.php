@@ -21,11 +21,10 @@ class MenuController extends Controller
       'menus_option' => $menus_option,
       'menus_server' => $menus_server
     ]);
+
   }
 
-  /**
-   * Show the form for creating a new resource.
-   */
+
   public function create()
   {
     //
@@ -36,16 +35,16 @@ class MenuController extends Controller
    */
   public function store(Request $request)
   {
-    $category_id = new Menu();
+    // $category_id = new Menu();
 
-    $category_id->category_id = $request->category_id;
-    return $category_id;
+    // $category_id->category_id = $request->category_id;
+    // return $category_id;
   }
 
   /**
    * Display the specified resource.
    */
-  public function show(menu $menu)
+  public function show()
   {
 
   }
