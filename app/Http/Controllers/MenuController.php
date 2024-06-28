@@ -11,13 +11,14 @@ class MenuController extends Controller
 {
   public function index(): View
   {
-    // $menus = Menu::with('options')->orderBy('indate', 'asc')->get();
-    // return view('menu', [
-    //     'menus' => $menus
-    // ]);
-    $menus = DB::table('menu_table')->get();
-
-    return view('menu.index', ['menu' => $menus]);
+    $menu_allergy = Menu::with('allergies')->orderBy('indate', 'asc')->get();
+    $menus_option = Menu::with('options')->orderBy('indate', 'asc')->get();
+    $menus_server = Menu::with('serveMethods')->orderBy('indate', 'asc')->get();
+    return view('menu', [
+      'menu_allergy' => $menu_allergy,
+      'menus_option' => $menus_option,
+      'menus_server' => $menus_server
+    ]);
   }
 
   /**
