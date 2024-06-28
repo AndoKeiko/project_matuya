@@ -2,21 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
   return view('index');
@@ -32,3 +18,10 @@ Route::get('/menu', function () {
 
 Route::get('/menu', [MenuController::class,'index']);
 
+// Route::get('/menu/{category_id}', function (string $category_id) {
+//   return 'category_id '.$category_id;
+// });
+// Route::get('/menu/{category_id}', function (Request $request, string $category_id) {
+//   return 'category_id '.$category_id;
+// });
+Route::get('/menu/{category_id}', [MenuController::class, 'index'])->name('menu.index');
