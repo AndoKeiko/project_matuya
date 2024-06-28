@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 use App\Models\menu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
+  public function index(): View
   {
-    $menus = Menu::with('options')->orderBy('indate', 'asc')->get();
-    return view('menu', [
-        'menus' => $menus
-    ]);
+    // $menus = Menu::with('options')->orderBy('indate', 'asc')->get();
+    // return view('menu', [
+    //     'menus' => $menus
+    // ]);
+    $menus = DB::table('menu_table')->get();
+
+    return view('menu.index', ['menu' => $menus]);
   }
 
   /**

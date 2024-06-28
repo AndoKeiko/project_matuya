@@ -12,10 +12,10 @@ class option extends Model
 
     protected $table = 'option_table'; 
     
-    public function menus() : HasMany
-    {
+    // public function menus() : HasMany
+    // {
 
-      return $this->hasMany(menu::class, 'option_id', 'option_id');
+    //   return $this->hasMany(menu::class, 'option_id', 'option_id');
 
-    }
+    // }
 }
