@@ -10,12 +10,11 @@ class option extends Model
 {
     use HasFactory;
 
-    protected $table = 'option_table'; 
+    protected $table = 'option_table';
+    protected $primaryKey = 'option_id';
     
-    // public function menus() : HasMany
-    // {
-
-    //   return $this->hasMany(menu::class, 'option_id', 'option_id');
-
-    // }
+    public function menus()
+    {
+        return $this->belongsToMany(Menu::class, 'menu_option_table', 'option_id', 'menu_id');
+    }
 }
