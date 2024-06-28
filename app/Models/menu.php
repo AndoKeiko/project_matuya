@@ -13,9 +13,9 @@ class menu extends Model
 
     protected $table = 'menu_table';
 
-    public function options(): BelongsTo
-    {
-        return $this->belongsTo(Option::class, 'option_id', 'option_id');
-    }
+    // public function options(): BelongsTo
+    // {
+    //     return $this->belongsTo(Option::class, 'option_id', 'option_id');
+    // }
 }
 
