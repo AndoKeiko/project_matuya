@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OptionController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -25,3 +26,9 @@ Route::get('/menu', [MenuController::class,'index']);
 //   return 'category_id '.$category_id;
 // });
 Route::get('/menu/{category_id}', [MenuController::class, 'index'])->name('menu.index');
+
+Route::get('/option', function () {
+  return view('option');
+});
+
+Route::get('/option', [OptionController::class, 'index'])->name('option.index');

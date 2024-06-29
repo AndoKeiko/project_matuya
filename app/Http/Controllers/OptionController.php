@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
 use App\Models\Option;
 use Illuminate\Http\Request;
 
 class OptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request): View
     {
-        //
+      $option_ids = $request->query('option_ids', []);
+      $options = Option::with('menu')->whereIn('option_id', $option_ids)->get();
+      return view('option', compact('option_ids', 'options'));
     }
 
     /**
