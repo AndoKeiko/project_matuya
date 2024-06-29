@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use App\Models\Post;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class MenuController extends Controller
 {
@@ -19,9 +20,8 @@ class MenuController extends Controller
     return view('menu', [
       'menu_allergy' => $menu_allergy,
       'menus_option' => $menus_option,
-      'menus_server' => $menus_server
+      'menus_server' => $menus_server,
     ]);
-
   }
 
 
@@ -35,10 +35,7 @@ class MenuController extends Controller
    */
   public function store(Request $request)
   {
-    // $category_id = new Menu();
 
-    // $category_id->category_id = $request->category_id;
-    // return $category_id;
   }
 
   /**
