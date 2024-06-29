@@ -10,7 +10,7 @@ $(function () {
     $('#total_price').html('￥' + total_price);
   });
 
-  $('.menu_list_item').on('click', function () {
+  $('.menu_list_item.accounting').on('click', function () {
     let menu_id = $(this).find('.menu_id').val();
     let menu_title = $(this).find('.menu_title_input').val();
     let menu_price = parseFloat($(this).find('.menu_price_input').val());

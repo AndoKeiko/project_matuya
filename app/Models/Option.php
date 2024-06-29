@@ -13,7 +13,7 @@ class option extends Model
     protected $table = 'option_table';
     protected $primaryKey = 'option_id';
     
-    public function menus()
+    public function menu()
     {
         return $this->belongsToMany(Menu::class, 'menu_option_table', 'option_id', 'menu_id');
     }
