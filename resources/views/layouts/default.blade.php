@@ -62,7 +62,7 @@
         </div>
         <div class="right_wrap w-4/12 flex flex-col sm:px-6 lg:px-8">
           <a class="w-full text-center text-2xl items-center btn-zan bg-lime-400 mb-2.5 font-bold">電子マネー残高照会</a>
-          <a class="w-full text-center text-2xl items-center btn-all-can bg-slate-900 text-white mb-2.5 font-bold">すべてキャンセル</a>
+          <a class="w-full text-center text-2xl items-center btn-all-can bg-slate-900 text-white mb-2.5 font-bold" id="all_cancel">すべてキャンセル</a>
           <a class="w-full text-center text-2xl items-center btn-amount bg-red-600 leading-10 font-bold">お会計</a>
         </div>
       </div>
