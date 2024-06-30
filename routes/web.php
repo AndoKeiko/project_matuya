@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OptionController;
+use App\Http\Controllers\SidemenuController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -32,3 +34,14 @@ Route::get('/option', function () {
 });
 
 Route::get('/option', [OptionController::class, 'index'])->name('option.index');
+
+Route::get('/sidemenu', function () {
+  return view('sidemenu');
+});
+
+Route::get('/sidemenu', [SidemenuController::class, 'index'])->name('sidemenu.index');
+Route::post('/sidemenu', [SidemenuController::class, 'store'])->name('sidemenu.store');
+
+Route::get('/payment', function () {
+  return view('payment');
+});

@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('payment_table', function (Blueprint $table) {
           $table->id('payment_id');
           $table->string('payment_name', 255);
+          $table->string('payment_img', 255);
+          $table->unsignedBigInteger('payment_cat');
           $table->datetime('indate');
           $table->datetime('updated_at');
         });

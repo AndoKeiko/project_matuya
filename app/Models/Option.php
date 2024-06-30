@@ -17,4 +17,8 @@ class option extends Model
     {
         return $this->belongsToMany(Menu::class, 'menu_option_table', 'option_id', 'menu_id');
     }
+    public function sidemenus()
+    {
+        return $this->belongsToMany(Sidemenu::class, 'menu_option_table', 'option_id', 'menu_id');
+    }
 }

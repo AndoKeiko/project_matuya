@@ -124,6 +124,11 @@
   order: 1;
 }
 .menu_list.option_menu_list {
+  width: 100%;
+  margin: 0 auto;
+}
+.setmenu_form {
+  display: flex;
   gap: 1rem 1rem;
   width: 100%;
   margin: 0 auto;
@@ -154,4 +159,21 @@
   width: 45%;
   height: auto;
   margin-right: 8rem;
+}
+.miso_soup_wrap .menu_list {
+  margin-bottom: 5rem;
+  justify-content: center;
+}
+.miso_soup_wrap .menu_list h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.sidemenu_wrap .menu_list h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
