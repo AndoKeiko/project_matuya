@@ -1,3 +1,35 @@
+
+/* カスタムスタイルを追加 */
+.btn {
+    @apply inline-block text-center no-underline border-none rounded-lg cursor-pointer m-2;
+    width: 100%; /* ボタンの横幅を親要素に合わせる */
+    max-width: 300px; /* 必要に応じて最大幅を設定 */
+    padding: 40px 80px; /* 大きさを10倍くらいにする */
+    font-size: 32px; /* フォントサイズも大きくする */
+    font-weight: bold;
+}
+
+.btn-primary {
+    @apply bg-blue-500 text-white;
+}
+
+.btn-secondary {
+    background-color: transparent; /* 背景色を透明に設定 */
+    color: white;
+    background-image: url('/img/gyumeshi_takeaway.png'); /* 画像のパス */
+    background-size: cover; /* 画像をボタンサイズに合わせる */
+    background-position: center; /* 画像を中央に配置 */
+}
+
+.btn-dinein {
+    background-color: transparent; /* 背景色を透明に設定 */
+    color: white;
+    background-image: url('/img/gyumeshi_dinein.png'); /* 画像のパス */
+    background-size: cover; /* 画像をボタンサイズに合わせる */
+    background-position: center; /* 画像を中央に配置 */
+}
+
+/* 既存のスタイル */
 * {
   box-sizing: border-box;
 }
