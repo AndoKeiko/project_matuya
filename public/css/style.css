@@ -234,8 +234,9 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background-color: #eee;
-  border-radius: 3px;
+  background-color: #fff;
+  border: 5px solid #eee;
+  border-radius: 5px;
 }
 .menu_list_left li a:hover {
   transform: translate(2px, 2px);
@@ -266,8 +267,9 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  background-color: #eee;
-  border-radius: 3px;
+  background-color: #fff;
+  border: 5px solid #eee;
+  border-radius: 5px;
 }
 .menu_list_right li a:hover {
   transform: translate(2px, 2px);
@@ -280,10 +282,13 @@
   object-fit: contain;
   margin-bottom: .3rem;
 }
-
 .payment_btn {
   width: 48.5%;
   text-align: center;  
+}
+.payment_btn a {
+  display: block;
+  width: 100%;
   height: 5rem;
   line-height: 5rem;
   margin-bottom: 3rem;
@@ -292,10 +297,10 @@
   font-size: 1.1rem;
   font-weight: bold;
 }
-.payment_btn.left {
+.payment_btn.left a {
   background-color: #f26d6d;
 }
-.payment_btn.right {
+.payment_btn.right a {
   background-color: rgb(123, 170, 224);
 }
 .payment_btn:hover {
@@ -314,4 +319,25 @@
   padding: 1rem 1rem;
   font-size: 1.5rem;
   border-bottom: 1px solid #222;
+}
+.receipt_wrap {
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid #222;
+  padding: 4rem;
+  word-break: break-all;
+  margin: 0 auto;
+  text-align: center;
+}
+.receipt_wrap h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #222;
+  padding: .5rem .8rem;
+  display: inline-block;
+  margin: 0 auto 2rem;
+  letter-spacing: .5rem;
+}
+.total_amount {
+  font-size: 1.5rem;
 }

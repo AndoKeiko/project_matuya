@@ -1,5 +1,10 @@
 @extends('layouts.default')
 @section('content')
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
 @if (!empty($payments) && count($payments) > 0)
 @php
 // 各カテゴリの配列を準備
@@ -16,9 +21,12 @@ $category1[] = $payment;
 @php
 $category2[] = $payment;
 @endphp
+
 @endif
 @endforeach
-
+@foreach ($orders as $order)
+{{$order}}
+@endforeach
 <div class="payment_select">
   <div class="payment_wrap">
     <dl class="payment_list">
@@ -34,8 +42,8 @@ $category2[] = $payment;
       <dd>0</dd>
     </dl>
   </div>
-  <div class="payment_btn left">現金</div>
-  <div class="payment_btn right">クレジット</div>
+  <div class="payment_btn left"><a href="">現金</a></div>
+  <div class="payment_btn right"><a href="">クレジット</a></div>
   @if (count($category1) > 0)
   <ul class="menu_list_left">
     @foreach ($category1 as $payment)

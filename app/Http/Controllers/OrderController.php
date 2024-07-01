@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 class OrderController extends Controller
 {
 
-  public function payment(Request $request)
+  public function processPayment(Request $request)
   {
       try {
           Log::info('payment called');
@@ -69,9 +69,11 @@ class OrderController extends Controller
                   ]);
               }
           }
-  
-          return response()->json(['message' => 'Payment processed successfully']);
+          DB::commit();
+          // return redirect()->route('payment.index')->with('message', 'Payment processed successfully');
+          return redirect()->route('receipt', ['order_id' => $order_id]);
       } catch (\Exception $e) {
+        DB::rollBack();
           // Log the exception and return a response with the error message
           Log::error('Error processing payment: ' . $e->getMessage());
           return response()->json(['error' => 'Error processing payment: ' . $e->getMessage()], 500);

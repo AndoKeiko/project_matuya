@@ -41,10 +41,10 @@
       </div>
     </main>
     @php
-        $excludedPaths = ['payment'];
+        $excludedPaths = ['payment','receipt'];
     @endphp
 
-    @if (!in_array(Request::path(), $excludedPaths))
+    @if (!in_array(Request::segment(1), $excludedPaths))
         @include('layouts.footer')
     @endif
   </div>

@@ -1,6 +1,6 @@
 <footer class="bg-gray-200 flex justify-between w-full footer">
   <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
-    <form id="paymentForm" method="POST" action="{{ route('payment') }}" class="w-full flex justify-between">
+    <form id="paymentForm" method="POST" action="{{ route('processPayment') }}" class="w-full flex justify-between">
       @csrf
       <div class="left_wrap w-8/12">
         <div class="left-up h-52" id="left-up">
@@ -25,18 +25,18 @@
         <a class="w-full text-center text-2xl items-center btn-all-can bg-slate-900 text-white mb-2.5 font-bold" id="all_cancel">すべてキャンセル</a>
         <button type="submit" id="for_payment_btn" class="w-full text-center text-2xl items-center btn-amount bg-red-600 leading-10 font-bold">お会計</button>
       </div>
-      <input type="hidden" name="subtotal_price" value="">
+      <input type="hidden" name="subtotal_price" id="subtotal_price_val" value="">
       <input type="hidden" name="tax_id" value="1">
-      <input type="hidden" name="total_price" value="">
+      <input type="hidden" name="total_price" id="total_price_val" value="">
       <input type="hidden" name="payment_id" value="1">
 
     </form>
     <script>
-document.getElementById('for_payment_btn').addEventListener('click', function() {
+    document.getElementById('for_payment_btn').addEventListener('click', function() {
     let formData = $('#paymentForm').serializeArray();
     console.log(formData); // フォームデータを確認
     document.getElementById('paymentForm').submit();
-});
+    });
 </script>
   </div>
 </footer>

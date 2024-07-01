@@ -106,6 +106,8 @@ $('#for_payment_btn').on('click', function () {
 
   if (!isNaN(current_total_price)) {
       sessionStorage.setItem("total_price", current_total_price);
+      $('#subtotal_price_val').val(current_total_price);
+      $('#total_price_val').val(current_total_price);
   }
 });
   $('#all_cancel').on('click', function () {
