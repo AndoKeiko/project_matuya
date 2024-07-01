@@ -16,6 +16,11 @@ class OrderDetail extends Model
 
     protected $fillable = ['order_id', 'menu_id', 'option_id', 'indate', 'updated_at'];
 
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class, 'menu_id', 'menu_id');
+    }
+
     public function order()
     {
         return $this->belongsTo(Order::class, 'order_id', 'order_id');

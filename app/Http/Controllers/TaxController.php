@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Models\Order;
+use App\Models\Tax;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class TaxController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      $payments = Payment::all();
-      return view('payment', ['payments' => $payments, 'message' => session('message')]);
+        //
     }
 
     /**
@@ -36,19 +34,15 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($order_id)
+    public function show(Tax $tax)
     {
-      $order = Order::with(['details', 'tax'])->find($order_id);
-
-      return view('receipt', [
-          'order' => $order,
-      ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payment $payment)
+    public function edit(Tax $tax)
     {
         //
     }
@@ -56,7 +50,7 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, Tax $tax)
     {
         //
     }
@@ -64,7 +58,7 @@ class PaymentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payment $payment)
+    public function destroy(Tax $tax)
     {
         //
     }

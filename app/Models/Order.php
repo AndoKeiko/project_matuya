@@ -20,4 +20,8 @@ class Order extends Model
     {
         return $this->hasMany(OrderDetail::class, 'order_id', 'order_id');
     }
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class, 'tax_id', 'tax_id');
+    }
 }

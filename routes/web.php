@@ -6,6 +6,7 @@ use App\Http\Controllers\OptionController;
 use App\Http\Controllers\SidemenuController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReceiptController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -44,13 +45,13 @@ Route::get('/sidemenu', function () {
 Route::get('/sidemenu', [SidemenuController::class, 'index'])->name('sidemenu.index');
 Route::post('/sidemenu', [SidemenuController::class, 'store'])->name('sidemenu.store');
 
-Route::get('/payment', function () {
-  return view('payment');
-});
+
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
 
-Route::post('/process-payment', [OrderController::class, 'processPayment'])->name('processPayment');
-Route::get('/payment', function () {
-    return view('payment');
-})->name('successPage');
+Route::post('/payment', [OrderController::class, 'processPayment'])->name('processPayment');
+
+// Route::get('/receipt', [ReceiptController::class, 'index'])->name('receipt.index');
+
+Route::get('/receipt/{order_id}', [ReceiptController::class, 'show'])->name('receipt.show');
