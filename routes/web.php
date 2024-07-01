@@ -23,12 +23,6 @@ Route::get('/menu', function () {
 
 Route::get('/menu', [MenuController::class,'index']);
 
-// Route::get('/menu/{category_id}', function (string $category_id) {
-//   return 'category_id '.$category_id;
-// });
-// Route::get('/menu/{category_id}', function (Request $request, string $category_id) {
-//   return 'category_id '.$category_id;
-// });
 Route::get('/menu/{category_id}', [MenuController::class, 'index'])->name('menu.index');
 
 Route::get('/option', function () {
@@ -45,13 +39,21 @@ Route::get('/sidemenu', function () {
 Route::get('/sidemenu', [SidemenuController::class, 'index'])->name('sidemenu.index');
 Route::post('/sidemenu', [SidemenuController::class, 'store'])->name('sidemenu.store');
 
-
+// Route::get('/payment', function () {
+//   return view('payment');
+// });
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
+// Route::post('/payment', [PaymentController::class, 'show'])->name('payment.show');
 
 Route::post('/payment', [OrderController::class, 'processPayment'])->name('processPayment');
 
-// Route::get('/receipt', [ReceiptController::class, 'index'])->name('receipt.index');
+// Route::get('/payment', function () {
+//   return view('payment');
+// })->name('successPage');
+
+Route::get('/receipt', [ReceiptController::class, 'index'])->name('receipt.index');
 
 Route::get('/receipt/{order_id}', [ReceiptController::class, 'show'])->name('receipt.show');
+
+// Route::get('/receipt', [ReceiptController::class, 'show'])->name('receipt');

@@ -11,10 +11,11 @@ class PaymentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+      $order_id = $request->session()->get('order_id');
       $payments = Payment::all();
-      return view('payment', ['payments' => $payments, 'message' => session('message')]);
+      return view('payment', ['payments' => $payments, 'message' => session('message'),'order_id' => $order_id]);
     }
 
     /**
