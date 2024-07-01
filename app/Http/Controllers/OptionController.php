@@ -28,7 +28,16 @@ class OptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // フォームデータを取得
+        $menuTitle = $request->input('menu_title');
+        $optionTitle = $request->input('option_title');
+        $menuId = $request->input('menu_id');
+        $optionId = $request->input('option_id');
+        $menuPrice = $request->input('menu_price');
+
+        // 必要な処理を実行
+
+        return redirect()->route('sidemenu.index')->with('success', 'データが送信されました。');
     }
 
     /**

@@ -8,15 +8,15 @@ use Illuminate\Http\Request;
 
 class SidemenuController extends Controller
 {
-    public function index(Request $request)
-    { 
-      $menus = Sidemenu::with('options')->where('side_flug', 2)->orderBy('indate', 'asc')->get();
-      $menus02 = Sidemenu::with('options')->where('side_flug', 1)->orderBy('indate', 'asc')->get();
+  public function index(Request $request)
+  {
+      $menus = Sidemenu::with('options')->where('side_flug', 1)->orderBy('indate', 'asc')->get();
+      $menus02 = Sidemenu::with('options')->where('side_flug', 2)->orderBy('indate', 'asc')->get();
       return view('sidemenu', [
           'menus' => $menus,
           'menus02' => $menus02,
       ]);
-    }
+  }
     /**
      * Show the form for creating a new resource.
      */

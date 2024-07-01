@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class OrderDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      $payments = Payment::all();
-      return view('payment', ['payments' => $payments]);
+        //
     }
 
     /**
@@ -35,15 +34,15 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
+    public function show(OrderDetail $orderDetail)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payment $payment)
+    public function edit(OrderDetail $orderDetail)
     {
         //
     }
@@ -51,7 +50,7 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, OrderDetail $orderDetail)
     {
         //
     }
@@ -59,7 +58,7 @@ class PaymentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payment $payment)
+    public function destroy(OrderDetail $orderDetail)
     {
         //
     }

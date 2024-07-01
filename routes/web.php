@@ -5,6 +5,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\SidemenuController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -35,6 +36,7 @@ Route::get('/option', function () {
 
 Route::get('/option', [OptionController::class, 'index'])->name('option.index');
 
+
 Route::get('/sidemenu', function () {
   return view('sidemenu');
 });
@@ -45,3 +47,10 @@ Route::post('/sidemenu', [SidemenuController::class, 'store'])->name('sidemenu.s
 Route::get('/payment', function () {
   return view('payment');
 });
+
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
+
+Route::post('/process-payment', [OrderController::class, 'processPayment'])->name('processPayment');
+Route::get('/payment', function () {
+    return view('payment');
+})->name('successPage');
