@@ -1,9 +1,7 @@
 @extends('layouts.default')
 @section('content')
 @if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
+        {{--{{ session('message') }}--}}
 @endif
 @if (!empty($payments) && count($payments) > 0)
 @php
@@ -24,26 +22,24 @@ $category2[] = $payment;
 
 @endif
 @endforeach
-@foreach ($orders as $order)
-{{$order}}
-@endforeach
+
 <div class="payment_select">
   <div class="payment_wrap">
     <dl class="payment_list">
       <dt>商品会計</dt>
-      <dd id="payment_total_amount">0</dd>
+      <dd class="payment_total_amount" id="payment_total_amount">0</dd>
     </dl>
     <dl class="payment_list">
       <dt>お預かり</dt>
       <dd>0</dd>
     </dl>
-    <dl class="payment_list">
+    <dl class="payment_list" id="payment_list">
       <dt>不足</dt>
       <dd>0</dd>
     </dl>
   </div>
-  <div class="payment_btn left"><a href="">現金</a></div>
-  <div class="payment_btn right"><a href="">クレジット</a></div>
+  <div class="payment_btn left"><a href="{{ route('receipt.show', ['order_id' => $order_id]) }}">現金</a></div>
+  <div class="payment_btn right"><a href="{{ route('receipt.show', ['order_id' => $order_id]) }}">クレジット</a></div>
   @if (count($category1) > 0)
   <ul class="menu_list_left">
     @foreach ($category1 as $payment)

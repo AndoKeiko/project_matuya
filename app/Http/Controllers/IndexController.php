@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Models\Order;
+use App\Models\Index;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-      $order_id = $request->session()->get('order_id');
-      $payments = Payment::all();
-      return view('payment', ['payments' => $payments, 'message' => session('message'),'order_id' => $order_id]);
+        //
     }
 
     /**
@@ -37,19 +34,15 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($order_id)
+    public function show(Index $index)
     {
-      $order = Order::with(['details', 'tax'])->find($order_id);
-
-      return view('receipt', [
-          'order' => $order,
-      ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payment $payment)
+    public function edit(Index $index)
     {
         //
     }
@@ -57,7 +50,7 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, Index $index)
     {
         //
     }
@@ -65,7 +58,7 @@ class PaymentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payment $payment)
+    public function destroy(Index $index)
     {
         //
     }

@@ -7,6 +7,7 @@ $(function () {
   });
   
   $('#payment_total_amount').html("￥"+ payment_total);
+  $('#payment_list').html("￥"+ payment_total);
 
   $('#left-up .menu_price_slip').each(function () {
     let price_str = $(this).text().replace(/[^\d.-]/g, '');

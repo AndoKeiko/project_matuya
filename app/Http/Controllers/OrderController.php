@@ -13,6 +13,7 @@ class OrderController extends Controller
 
   public function processPayment(Request $request)
   {
+    DB::beginTransaction();
       try {
           Log::info('payment called');
   
@@ -70,8 +71,9 @@ class OrderController extends Controller
               }
           }
           DB::commit();
+          return redirect()->route('payment.index')->with(['message' => 'Payment processed successfully', 'order_id' => $order_id]);
           // return redirect()->route('payment.index')->with('message', 'Payment processed successfully');
-          return redirect()->route('receipt', ['order_id' => $order_id]);
+          // return redirect()->route('receipt', ['order_id' => $order_id]);
       } catch (\Exception $e) {
         DB::rollBack();
           // Log the exception and return a response with the error message
