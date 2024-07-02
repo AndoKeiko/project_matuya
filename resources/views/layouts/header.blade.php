@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="">
+                <a href="{{ route('index')}}">
                     <img src="{{asset('storage/img_logo.svg')}}" width="80" height="37">
                     </a>
                 </div>
