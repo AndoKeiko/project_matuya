@@ -16,7 +16,9 @@
 .btn-secondary {
     background-color: transparent; /* 背景色を透明に設定 */
     color: white;
-    background-image: url('/img/gyumeshi_takeaway.png'); /* 画像のパス */
+    background-image: url('/storage/img/gyumeshi_takeaway.png');
+    
+    /* background-image: url('/img/gyumeshi_takeaway.png'); 画像のパス */
     background-size: cover; /* 画像をボタンサイズに合わせる */
     background-position: center; /* 画像を中央に配置 */
 }
@@ -24,7 +26,7 @@
 .btn-dinein {
     background-color: transparent; /* 背景色を透明に設定 */
     color: white;
-    background-image: url('/img/gyumeshi_dinein.png'); /* 画像のパス */
+    background-image: url('/storage/img/gyumeshi_dinein.png');
     background-size: cover; /* 画像をボタンサイズに合わせる */
     background-position: center; /* 画像を中央に配置 */
 }
