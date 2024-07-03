@@ -12,17 +12,17 @@ use App\Http\Controllers\ReceiptController;
 
 
 // カテゴリーとお持ち帰りページのルート
-Route::get('/category-page', [CategoryController::class, 'index'])->name('category.page');
-Route::get('/takeaway-page', [TakeawayController::class, 'index'])->name('takeaway.page');
+// Route::get('/category-page', [CategoryController::class, 'index'])->name('category.page');
+// Route::get('/takeaway-page', [TakeawayController::class, 'index'])->name('takeaway.page');
 
 // 既存のルート
-Route::get('/', function () {
-  return view('index');
-});
+// Route::get('/', function () {
+//   return view('index');
+// });
 
-Route::get('/category', function () {
-  return view('category');
-});
+// Route::get('/category', function () {
+//   return view('category');
+// });
 
 Route::get('/menu', [MenuController::class,'index']);
 Route::get('/menu/{category_id}', [MenuController::class, 'index'])->name('menu.index');
