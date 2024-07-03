@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('content')
 <ul class="menu_list">
+
   @if (!empty($menus_option) && count($menus_option) > 0)
   @foreach ($menus_option as $menu)
   @php
@@ -19,10 +20,21 @@
       $option_price = !empty($menu->option_price) ? $menu->option_price : 0;
       $subtotalamount = $menu_price + $option_price;
       @endphp
-      <img src="{{asset($filename)}}" width="100" height="100" class="menu_img">
+      <img src="{{asset($filename)}}" width="130" height="130" class="menu_img">
       <div class="menu_text_box" id="">
         <p class="menu_title">{{ $menu->menu_name }}{{$menu->option_name}}</p>
         <p class="menu_price">￥{{$subtotalamount}}</p>
+            @if($menu->allergies->isNotEmpty())
+              <p class="mt-1.5">
+                <span class="text-sm">アレルギー情報:</span>
+                @foreach($menu->allergies as $allergy)
+                <span class="menu_allergies">
+                  {{ $allergy->allergies_name }}
+                  </span>
+                @endforeach
+                </p>
+            @endif
+
       </div>
       <input type="hidden" class="subtotal_price_input" name="subtotal_price" value="{{ $subtotalamount }}">
       <input type="hidden" class="tax_id_input" name="tax_id" value="1">
