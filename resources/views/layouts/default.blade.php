@@ -20,21 +20,8 @@
 <body class="font-sans antialiased body">
   <div class="min-h-screen dark:bg-gray-900">
     <!-- Page Heading -->
-    @include('layouts.header')
-    <header name="header" class="bg-gray-100">
-      <div class="max-w-7xl mx-auto py-6 px-2 sm:px-4 lg:px-4 w-full flex justify-between">
-        <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex justify-between w-full">
-          <a href="{{ route('menu.index', ['category_id' => 2]) }}" class="flex text-center">おすすめ</a>
-          <a href="{{ route('menu.index', ['category_id' => 1]) }}" class="flex text-center">牛めし</a>
-          <a href="{{ route('menu.index', ['category_id' => 3]) }}" class="flex text-center">カレー</a>
-          <a href="{{ route('menu.index', ['category_id' => 4]) }}" class="flex text-center">丼</a>
-          <a href="{{ route('menu.index', ['category_id' => 5]) }}" class="flex text-center">定食</a>
-          <a href="{{ route('menu.index', ['category_id' => 6]) }}" class="flex text-center">サイドメニュー</a>
-          <a href="{{ route('menu.index', ['category_id' => 7]) }}" class="flex text-center">ドリンク</a>
-          <a href="{{ route('menu.index', ['category_id' => 8]) }}" class="flex text-center">お子様</a>
-        </div>
-      </div>
-    </header>
+    @include('layouts.header')     
+
     <!-- Page Content -->
     <main class="main">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

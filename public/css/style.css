@@ -1,35 +1,64 @@
 
 /* カスタムスタイルを追加 */
-.btn {
+.index_btn {
+  gap: 0 7rem;
+}
+.index_btn .btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
+}
+.nav-header a {
+  padding: 0 1rem;
+  /* width: calc(100% / 8); */
+  align-items: center;
+}
+.header_img {
+    margin-right: 1.1rem;
+    border-radius: 5px;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(80%);
+}
+.top-btn {
     @apply inline-block text-center no-underline border-none rounded-lg cursor-pointer m-2;
-    width: 100%; /* ボタンの横幅を親要素に合わせる */
-    max-width: 300px; /* 必要に応じて最大幅を設定 */
-    padding: 40px 80px; /* 大きさを10倍くらいにする */
+    width: 300px; /* 必要に応じて最大幅を設定 */
+    padding: 80px 0;
     font-size: 32px; /* フォントサイズも大きくする */
     font-weight: bold;
     text-align: center;
+    text-shadow: #000 1px 0 5px;
+    border-radius: 10px;
+    background-blend-mode: exclusion;
+    background-color: rgb(255 255 255 / 28%);
+    display: inline-block;
+  }
+#dinein {
+  display: none;
 }
-
+#takeout {
+  display: none;
+}
 .btn-primary {
     @apply bg-blue-500 text-white;
 }
 
 .btn-secondary {
-    background-color: transparent; /* 背景色を透明に設定 */
+
     color: white;
-    background-image: url('../storage/image/gyumeshi_takeaway.png');
-    
+    background-image: url('../storage/image/gyumeshi_takeaway.png');    
     /* background-image: url('/img/gyumeshi_takeaway.png'); 画像のパス */
     background-size: cover; /* 画像をボタンサイズに合わせる */
     background-position: center; /* 画像を中央に配置 */
+    background-blend-mode: exclusion;
 }
 
 .btn-dinein {
-    background-color: transparent; /* 背景色を透明に設定 */
-    color: white;
-    background-image: url('../storage/image/gyumeshi_dinein.png');
-    background-size: cover; /* 画像をボタンサイズに合わせる */
-    background-position: center; /* 画像を中央に配置 */
+  background-color: rgb(255 255 255 / 28%);
+  color: white;
+  background-image: url(../storage/image/gyumeshi_dinein.png);
+  background-size: cover;
+  background-position: center;
+
 }
 
 /* 既存のスタイル */
@@ -157,6 +186,8 @@
 }
 .menu_img {
   margin-right: 1.5rem;
+  border-radius: 5px;
+  height: auto;
 }
 .menu_list_item.first-item {
 
@@ -187,9 +218,16 @@
 }
 .option_menu_list .menu_list_item {
   background-color: #eee;
-  padding: 1.5rem 0;
+  padding: 0 0 1.5rem;
  justify-content: center;
  width: 100%;
+}
+
+.option_menu_list .menu_list_item .menu_allergies {
+  background-color: #eee;
+}
+.option_menu_list .menu_list_item.first-item .menu_allergies {
+  background-color: #fefade;
 }
 .option_menu_list .menu_list_item a {
   display: block;
@@ -201,17 +239,25 @@
   background-color: #fff;
   margin-bottom: 5rem;
   border: none;
+  display: flex;
+  justify-content: space-between;
 }
 .option_menu_list .menu_list_item.first-item:hover {
   transform: translate(0, 0);
   box-shadow:none;
 }
-.option_menu_list .menu_list_item.first-item p {
+.option_menu_list .menu_list_item.first-item .option_first_menu_title_wrap {
+  width: 55%;
+  margin-top: 5rem;
+}
+.option_menu_list .menu_list_item.first-item .option_first_menu_title {
   width: 50%;
   display: flex;
   align-items: center;
   font-size: 2.5rem;
-  margin-top: 10rem;
+}
+.option_menu_list .menu_list_item.first-item .option_first_menu_allergy {
+  margin-top: 2rem;
 }
 .option_menu_list .menu_list_item.first-item img {
   width: 45%;

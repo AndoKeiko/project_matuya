@@ -1,18 +1,15 @@
 @extends('layouts.default')
 @section('content')
-<ul class="menu_list">
 
-  @if (!empty($menus_option) && count($menus_option) > 0)
-  @foreach ($menus_option as $menu)
-  @php
-  $option_ids = $menu->options->pluck('option_id')->toArray();
-  @endphp
-  @if ($menu->options->isEmpty())
+<ul class="menu_list">
+  @if (!empty($menus) && count($menus) > 0)
+  @foreach ($menus as $menu)
+  @if($menu->options->isEmpty())
   <li class="menu_list_item accounting" id="{{ $menu->menu_id }}">
     @else
   <li class="menu_list_item setmenu" id="{{ $menu->menu_id }}">
-    <a href="{{ route('option.index', ['option_ids' => $option_ids]) }}">
-      @endif
+    <a href="{{ route('option.index', ['option_ids' => $menu->options->pluck('id')]) }}">
+  @endif
       @php
       $filename = 'storage/image/' . $menu->menu_image;
       $menu_price = $menu->menu_price;
@@ -45,7 +42,7 @@
       <input type="hidden" class="menu_price_input" name="menu_price" value="{{$menu_price ?? ''}}">
       <input type="hidden" class="option_price_input" name="option_price" value="">
 
-      @if (!$menu->options->isEmpty())
+      @if($menu->options->isEmpty())
     </a>
     @endif
   </li>
