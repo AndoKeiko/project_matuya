@@ -5,7 +5,9 @@ $(function () {
   savedItems.forEach(function (item) {
     $('#left-up').prepend(item);
   });
-  
+  let serveType = sessionStorage.getItem("serveType");
+$('#serveType').val(serveType);
+$('#serveType_head').val(serveType);
   $('#payment_total_amount').html("￥"+ payment_total);
   $('#payment_list').html("￥"+ payment_total);
 

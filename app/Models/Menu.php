@@ -28,10 +28,10 @@ class menu extends Model
     {
         return $this->belongsToMany(Serve::class, 'menu_serve_table', 'menu_id', 'serve_id');
     }
-
     public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class, 'menu_id', 'menu_id');
     }
+
 }
 
