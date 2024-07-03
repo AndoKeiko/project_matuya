@@ -184,13 +184,13 @@
 }
 .option_menu_list .menu_list_item {
   background-color: #eee;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
  justify-content: center;
  width: 100%;
 }
 .option_menu_list .menu_list_item a {
-  justify-content: center;
-
+  display: block;
+  text-align: center;
 }
 .option_menu_list .menu_list_item.first-item {
   padding: 0;
