@@ -52,7 +52,7 @@ $('#serveType_head').val(serveType);
     let option_title = $(this).find('.option_title_input').val()|| '';
     let option_id = $(this).find('.option_id_input').val()|| '';
     let menu_price = parseFloat($(this).find('.menu_price_input').val()|| 0);
-    let option_price = parseFloat($(this).find('.menu_price_input').val()|| 0);
+    let option_price = parseFloat($(this).find('.option_price_input').val()|| 0);
     let subtotalamount = menu_price + option_price;
 
     let html = `
