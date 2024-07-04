@@ -42,7 +42,7 @@
       <input type="hidden" class="menu_price_input" name="menu_price" value="{{$menu_price ?? ''}}">
       <input type="hidden" class="option_price_input" name="option_price" value="">
 
-      @if($menu->options->isEmpty())
+      @if(!$menu->options->isEmpty())
     </a>
     @endif
   </li>
