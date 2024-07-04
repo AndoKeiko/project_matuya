@@ -19,8 +19,10 @@
       $subtotalamount = $menu_price + $option_price;
       @endphp
       <img src="{{asset($filename)}}" width="100" height="100" class="menu_img">
-      <p>{{ $menu->menu_name }}</p>
+      <div class="menu_title_box">
+      <p class="menu_title">{{ $menu->menu_name }}</p>
       <p class="menu_price">￥{{$subtotalamount}}</p>
+      </div>
       <input type="hidden" class="subtotal_price_input" name="subtotal_price" value="{{ $subtotalamount }}">
       <input type="hidden" class="tax_id_input" name="tax_id" value="1">
       <input type="hidden" class="menu_title_input" name="menu_title" value="{{ $menu->menu_name }}">
@@ -50,8 +52,10 @@
       $subtotalamount = $menu_price + $option_price;
       @endphp
       <img src="{{asset($filename)}}" width="100" height="100" class="menu_img">
-      <p>{{ $menu02->menu_name }}</p><br>
+      <div class="menu_title_box">
+      <p class="menu_title">{{ $menu02->menu_name }}</p><br>
       <p class="menu_price">￥{{$subtotalamount}}</p>
+      </div>
       <input type="hidden" class="subtotal_price_input" name="subtotal_price" value="{{ $subtotalamount ?? 0 }}">
       <input type="hidden" class="tax_id_input" name="tax_id" value="1">
       <input type="hidden" class="menu_title_input" name="menu_title" value="{{ $menu02->menu_name ?? '' }}">
