@@ -12,13 +12,13 @@ class SidemenuController extends Controller
   {
       $menus = Sidemenu::where('side_flug', 1)
           ->orderBy('indate', 'asc')
-          ->groupBy('menu_id')
-          ->get();
+          ->get()
+          ->unique('menu_id');
   
       $menus02 = Sidemenu::where('side_flug', 2)
           ->orderBy('indate', 'asc')
-          ->groupBy('menu_id')
-          ->get();
+          ->get()
+          ->unique('menu_id');
   
       return view('sidemenu', [
           'menus' => $menus,

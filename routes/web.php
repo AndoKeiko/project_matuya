@@ -24,7 +24,7 @@ use App\Http\Controllers\ReceiptController;
 //   return view('category');
 // });
 
-Route::get('/menu', [MenuController::class,'index'])->name('menu.index');
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
 Route::get('/menu/{category_id}/{serve_id}', [MenuController::class, 'index'])->name('menu.index');
 
 Route::get('/option', [OptionController::class, 'index'])->name('option.index');

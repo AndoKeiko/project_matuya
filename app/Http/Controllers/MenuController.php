@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-  public function index($serve_id, $category_id): View
+  public function index($category_id = null, $serve_id = null): View
   {
     $menu_allergy = Menu::with('allergies')->orderBy('indate', 'asc')->get();
     
