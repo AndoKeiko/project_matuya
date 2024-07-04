@@ -55,18 +55,23 @@ $('#serveType_head').val(serveType);
     let option_price = parseFloat($(this).find('.menu_price_input').val()|| 0);
     let subtotalamount = menu_price + option_price;
 
-    let html = '<dl class="item_list flex justify-between font-bold" data-id="'+menu_id+'">';
-    html += '<dt class="w-8 flex items-center item_list_item"><span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span></dt><dd class="w-full flex justify-between item_list_item-dd">';
-    html += '<span class="title">';
-    html += menu_title + option_title +'</span><span class="menu_price_slip">￥' + subtotalamount + '</span>';
-    html += '</dd>';
-    html += '<input type="hidden" class="menu_title_input" name="order_details[][menu_title]" value="'+menu_title+'">';
-    html += '<input type="hidden" class="option_title_input" name="order_details[][option_title]" value="'+option_title+'">';
-    html += '<input type="hidden" class="menu_id_input" name="order_details[][menu_id]" value="'+menu_id+'">';
-    html += '<input type="hidden" class="option_id_input" name="order_details[][option_id]" value="'+option_id+'">';
-    html += '<input type="hidden" class="menu_price_input" name="order_details[][menu_price]" value="'+menu_price+'">';
-    html += '<input type="hidden" class="option_price_input" name="order_details[][option_price]" value="'+option_price+'">';
-    html += '<dl/>';
+    let html = `
+    <dl class="item_list flex justify-between font-bold" data-id="${menu_id}">
+      <dt class="w-8 flex items-center item_list_item">
+        <span class="bg-white rounded-full aspect-square size-8 flex items-center justify-center font-bold">―</span>
+      </dt>
+      <dd class="w-full flex justify-between item_list_item-dd">
+        <span class="title">${menu_title}${option_title}</span>
+        <span class="menu_price_slip">￥${subtotalamount}</span>
+      </dd>
+      <input type="hidden" class="menu_title_input" name="order_details[][menu_title]" value="${menu_title}">
+      <input type="hidden" class="option_title_input" name="order_details[][option_title]" value="${option_title}">
+      <input type="hidden" class="menu_id_input" name="order_details[][menu_id]" value="${menu_id}">
+      <input type="hidden" class="option_id_input" name="order_details[][option_id]" value="${option_id}">
+      <input type="hidden" class="menu_price_input" name="order_details[][menu_price]" value="${menu_price}">
+      <input type="hidden" class="option_price_input" name="order_details[][option_price]" value="${option_price}">
+    </dl>
+  `;
     $('#left-up').prepend(html);
 
     let price_str = $(this).text().replace(/[^\d.-]/g, '');
