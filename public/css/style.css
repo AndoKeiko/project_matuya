@@ -176,7 +176,14 @@
 .menu_text_box {
   width: calc(100% - 130px - 1.5rem);
   padding-right: 1.5rem;
-
+}
+.payment_select .menu_text_box {
+  width: 100%;
+  padding-right: 0;
+}
+.payment_select .menu_title {
+  margin-top: 0;
+  width: 100%;
 }
 .menu_title_box {
   width: calc(100% - 100px - 1.5rem);
