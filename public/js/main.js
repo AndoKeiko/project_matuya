@@ -119,8 +119,23 @@ $('#for_payment_btn').on('click', function () {
   }
 });
   $('#all_cancel').on('click', function () {
-    sessionStorage.removeItem('menuItems');
+    // sessionStorage.removeItem('menuItems');
+    // sessionStorage.removeItem('total_price');
+    sessionStorage.clear();
     $('#left-up').html("");
-    $('#total_price').html('￥' + "0");
+    // $('#total_price').html('￥' + "0");
+
+    total_price = 0;
+    $('#total_price').html('￥' + total_price);
+
+    // 支払い総額のリセット
+    $('#payment_total_amount').html("￥" + total_price);
+    $('#payment_list').html("￥" + total_price);
+
+    // その他のフォームや要素のリセット
+    $('#subtotal_price_val').val(total_price);
+    $('#total_price_val').val(total_price);
+    $('#serveType').val('');
+    $('#serveType_head').val('');
   });
 });
