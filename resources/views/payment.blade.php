@@ -33,9 +33,9 @@ $category2[] = $payment;
       <dt>お預かり</dt>
       <dd>0</dd>
     </dl>
-    <dl class="payment_list" id="payment_list">
+    <dl class="payment_list">
       <dt>不足</dt>
-      <dd>0</dd>
+      <dd id="payment_list">0</dd>
     </dl>
   </div>
   <div class="payment_btn left"><a href="{{ route('receipt.show', ['order_id' => $order_id]) }}">現金</a></div>
